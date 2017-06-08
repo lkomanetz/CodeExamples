@@ -10,9 +10,9 @@ namespace MethodParameterExamples {
             TestClass objB = new TestClass() { Id = 'B', IntegerProperty = 1 };
             TestClass objC = new TestClass() { Id = 'C', IntegerProperty = 1 };
 
-            IncrementIntegerProperty(objA);
-            IncrementIntegerProperty(ref objB);
-            IncrementIntegerPropertyEx(objC);
+            UpdateIntegerProperty(objA);
+            UpdateIntegerProperty(ref objB);
+            UpdateIntegerPropertyEx(objC);
 
             IList<TestClass> testObjects = new List<TestClass>() { objA, objB, objC };
 
@@ -21,16 +21,16 @@ namespace MethodParameterExamples {
             }
         }
 
-        static void IncrementIntegerProperty(TestClass obj) {
+        static void UpdateIntegerProperty(TestClass obj) {
             obj.IntegerProperty = 2;
         }
 
-        static void IncrementIntegerPropertyEx(TestClass obj) {
+        static void UpdateIntegerPropertyEx(TestClass obj) {
             obj = new TestClass();
             obj.IntegerProperty = 2;
         }
 
-        static void IncrementIntegerProperty(ref TestClass obj) {
+        static void UpdateIntegerProperty(ref TestClass obj) {
             obj = new TestClass();
             obj.IntegerProperty = 2;
         }
